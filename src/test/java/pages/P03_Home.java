@@ -16,4 +16,11 @@ public class P03_Home {
 
         return this.driver.findElement(By.className(elem));
     }
+
+    public WebElement getElementByPartialText(String elem)
+    {
+
+        return this.driver.findElement(By.partialLinkText(elem));
+    }
+
 }

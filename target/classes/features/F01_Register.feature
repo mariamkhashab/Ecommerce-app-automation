@@ -1,3 +1,4 @@
+@Registeration
 Feature: User registers new account
 
   Scenario: User registers with valid data

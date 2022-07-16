@@ -21,7 +21,7 @@ public class S01_Register {
     P03_Home homePage;
 
 
-    @Before
+    @Before("@Registeration")
     public void beforeRegistration() throws InterruptedException
     {
         System.out.println(System.getProperty("user.dir"));
@@ -93,17 +93,27 @@ public class S01_Register {
             String actualEmail = registerPage.getElementByID("Email-error").getText();
             Assert.assertTrue("Error in Email", expectedEmail.contains(actualEmail));
         } catch (NoSuchElementException e) {
-            try {
-                String actualPassword = registerPage.getElementByPath("//*[@id=\"Password-error\"]/p").getText();
-                Assert.assertTrue("Error in Password", expectedPassword.contains(actualPassword));
-            } catch (NoSuchElementException e1) {
-                String actualConfirmPassword = registerPage.getElementByID("ConfirmPassword-error").getText();
-                Assert.assertTrue("Error in Password Confirmation", expectedConfirmPassword.contains(actualConfirmPassword));
-            }
-
+            System.out.println("Exception in Email");
 
         }
+        try {
+            String actualPassword = registerPage.getElementByPath("//*[@id=\"Password-error\"]/p").getText();
+            Assert.assertTrue("Error in Password", expectedPassword.contains(actualPassword));
+        } catch (NoSuchElementException e1) {
+            System.out.println("Exception in Password");
+
+        }
+        try{
+            String actualConfirmPassword = registerPage.getElementByID("ConfirmPassword-error").getText();
+            Assert.assertTrue("Error in Password Confirmation", expectedConfirmPassword.contains(actualConfirmPassword));
+        }catch(NoSuchElementException e2){
+            System.out.println("Exception in Confirm Password");
+
+        }
+
+
     }
+
     @Then("error messeges for empty fields appear appear")
     public void emptyRegister() throws InterruptedException, NoSuchElementException
     {
@@ -118,29 +128,44 @@ public class S01_Register {
             String actualFirstName = registerPage.getElementByID("FirstName-error").getText();
             Assert.assertTrue("Empty first name",expectedFirstName.contains(actualFirstName) );
 
-        }catch (NoSuchElementException e)
-        {
-            try {
-                String actualLastName = registerPage.getElementByID("LastName-error").getText();
-                Assert.assertTrue("Empty Last name", expectedLastName.contains(actualLastName));
-            }catch(NoSuchElementException e1) {
-                String actualEmail = registerPage.getElementByID("Email-error").getText();
-                Assert.assertTrue("Empty Email", expectedEmail.contains(actualEmail));
-                try{
-                String actualPassword = registerPage.getElementByID("Password-error").getText();
-                Assert.assertTrue("Empty Password", expectedPassword.contains(actualPassword));
-
-            }catch(NoSuchElementException e2)
-                {
-                    String actualConfirmPassword = registerPage.getElementByID("ConfirmPassword-error").getText();
-                    Assert.assertTrue("Empty Password Confirmation", expectedPassword.contains(actualConfirmPassword));
-                }
-            }
+        }catch (NoSuchElementException e) {
+            System.out.println("Exception in first name");
         }
+        try {
+            String actualLastName = registerPage.getElementByID("LastName-error").getText();
+            Assert.assertTrue("Empty Last name", expectedLastName.contains(actualLastName));
+        }catch(NoSuchElementException e1) {
+            System.out.println("Exception in Last name");
+        }
+        try{
+            String actualEmail = registerPage.getElementByID("Email-error").getText();
+            Assert.assertTrue("Empty Email", expectedEmail.contains(actualEmail));
+        }catch(NoSuchElementException e2)
+        {
+            System.out.println("Exception in Email");
+        }
+        try{
+            String actualPassword = registerPage.getElementByID("Password-error").getText();
+            Assert.assertTrue("Empty Password", expectedPassword.contains(actualPassword));
 
+        }catch(NoSuchElementException e3)
+            {
+                System.out.println("Exception in Password");
 
+            }
+        try{
+            String actualConfirmPassword = registerPage.getElementByID("ConfirmPassword-error").getText();
+            Assert.assertTrue("Empty Password Confirmation", expectedPassword.contains(actualConfirmPassword));
+        }catch(NoSuchElementException e4)
+        {
+            System.out.println("Exception in Confirm password");
 
+        }
     }
+
+
+
+
     @Then("error messeges for existing account appear")
     public void existingRegister() throws InterruptedException {
         registerPage.getElementByID("register-button").click();
@@ -151,7 +176,7 @@ public class S01_Register {
 
 
     }
-    @After
+    @After("@Registeration")
     public void afterRegistration()
     {
         this.driver.quit();

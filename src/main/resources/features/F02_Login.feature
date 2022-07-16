@@ -1,10 +1,12 @@
+@Login
 Feature: User logs into an existing account
 
   Scenario: User logs in with valid email and password
-    Given user navigates to "https://demo.nopcommerce.com/"
-    And clicks on login button
-    And gets redirected to log in form
-    When user enters "mariamelkhashab@outlook.com" in email
+    When user enters "mariamelkhashab@outlook.com" in email login
     And user enters "123456" in password
-    Then he can login successfully
-    And gets redirected to home page
+    Then he gets redirected to home page as authenticated user
+
+  Scenario: User logs in with invalid email or invalid password
+    When user enters "mariamelkhashab@outlook.com" in email login
+    And user enters "345678" in password
+    Then he stays on the same page and error messeges for invalid login appear
