@@ -11,12 +11,27 @@ public class P03_Home {
         this.driver = driver;
     }
 
+    public WebElement getElementByID(String elem)
+    {
+
+        return this.driver.findElement(By.id(elem));
+    }
+    public WebElement getElementByCss(String elem)
+    {
+
+        return this.driver.findElement(By.cssSelector(elem));
+    }
+
     public WebElement getElementByClass(String elem)
     {
 
         return this.driver.findElement(By.className(elem));
     }
+    public WebElement getElementByPath(String elem)
+    {
 
+        return this.driver.findElement(By.xpath(elem));
+    }
     public WebElement getElementByPartialText(String elem)
     {
 

@@ -1,0 +1,8 @@
+Assumptions:
+1-Reset feature:
+	user forgets password at login
+
+2- Logged in user means:
+	Logout button is visible --> authenticated 
+
+3- log in check only in last scenario (check out)
