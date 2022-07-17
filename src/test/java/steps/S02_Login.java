@@ -47,7 +47,7 @@ public class S02_Login {
 
     @Then("he gets redirected to home page as authenticated user")
     public void validLogin() throws InterruptedException {
-        loginPage.getElementByPath("/html/body/div[6]/div[3]/div/div/div/div[2]/div[1]/div[2]/form/div[3]/button").click();
+        loginPage.getElementByPath("//div/button[@type=\"submit\"]").click();
         Thread.sleep(1000);
         String expectedURL = "https://demo.nopcommerce.com/";
         String actualURL = driver.getCurrentUrl();
@@ -59,12 +59,12 @@ public class S02_Login {
 
     @Then("he stays on the same page and error messeges for invalid login appear")
     public void invalidLogin() throws InterruptedException, NoSuchElementException {
-        loginPage.getElementByPath("/html/body/div[6]/div[3]/div/div/div/div[2]/div[1]/div[2]/form/div[3]/button").click();
+        loginPage.getElementByPath("//div/button[@type=\"submit\"]").click();
         Thread.sleep(1000);
         String expectedURL = "https://demo.nopcommerce.com/login";
         String actualURL = driver.getCurrentUrl();
         Assert.assertTrue("Not expected url",actualURL.contains(expectedURL));
-        String actualMsg = loginPage.getElementByPath("/html/body/div[6]/div[3]/div/div/div/div[2]/div[1]/div[2]/form/div[1]").getText();
+        String actualMsg = loginPage.getElementByPath("//div[@class=\"message-error validation-summary-errors\"]").getText();
         String expectedMsg = "Login was unsuccessful";
         Assert.assertTrue("Error in warning msg",actualMsg.contains(expectedMsg));
 

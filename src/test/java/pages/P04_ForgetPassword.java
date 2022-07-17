@@ -4,12 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class P02_Login {
-    WebDriver driver;
+public class P04_ForgetPassword {
+WebDriver driver;
 
-    public P02_Login(WebDriver driver) {
+    public P04_ForgetPassword(WebDriver driver) {
         this.driver = driver;
     }
+
     public WebElement getElementByID(String elem)
     {
 
@@ -22,6 +23,5 @@ public class P02_Login {
 
         return this.driver.findElement(By.xpath(elem));
     }
-
 
 }

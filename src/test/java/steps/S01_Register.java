@@ -97,7 +97,8 @@ public class S01_Register {
 
         }
         try {
-            String actualPassword = registerPage.getElementByPath("//*[@id=\"Password-error\"]/p").getText();
+            String actualPassword = registerPage.getElementByPath("//span/p").getText();
+            System.out.println(actualPassword);
             Assert.assertTrue("Error in Password", expectedPassword.contains(actualPassword));
         } catch (NoSuchElementException e1) {
             System.out.println("Exception in Password");
@@ -171,7 +172,7 @@ public class S01_Register {
         registerPage.getElementByID("register-button").click();
         Thread.sleep(1000);
         String expectedEmail = "The specified email already exists\n";
-        String actualEmail = registerPage.getElementByPath("/html/body/div[6]/div[3]/div/div/div/div[2]/form/div[1]/ul/li").getText();
+        String actualEmail = registerPage.getElementByPath("//form/div/ul/li").getText();
         Assert.assertTrue(" Email exists ",expectedEmail.contains(actualEmail) );
 
 

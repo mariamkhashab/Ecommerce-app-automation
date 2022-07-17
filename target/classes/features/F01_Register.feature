@@ -10,7 +10,7 @@ Feature: User registers new account
   Scenario: User registers with invalid email or invalid password or mismatch password
     When user enters "Mariam" in first name and "Khashab" in second name
     And user enters "mariamelkhashab.com" in email
-    And user enters "123456" in password and "123456" in confirm password
+    And user enters "12345" in password and "123456" in confirm password
     Then error messeges for invalid fields appear
 
   Scenario: User registers with any empty data field
