@@ -1,3 +1,6 @@
+Notes:
+Any copy-paste was from same project for copying repetitive lines
+
 Assumptions:
 1-Reset feature:
 	user forgets password at login
@@ -6,3 +9,4 @@ Assumptions:
 	Logout button is visible --> authenticated 
 
 3- log in check only in last scenario (check out)
+4- at checkout, cart is always not empty

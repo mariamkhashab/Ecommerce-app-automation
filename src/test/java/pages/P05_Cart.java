@@ -4,10 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class P03_Home {
+public class P05_Cart {
     WebDriver driver;
 
-    public P03_Home(WebDriver driver) {
+    public P05_Cart(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -16,27 +16,15 @@ public class P03_Home {
 
         return this.driver.findElement(By.id(elem));
     }
-    public WebElement getElementByPartialText(String elem)
-    {
-
-        return this.driver.findElement(By.partialLinkText(elem));
-    }
-
-    public WebElement getElementByCss(String elem)
-    {
-
-        return this.driver.findElement(By.cssSelector(elem));
-    }
 
     public WebElement getElementByClass(String elem)
     {
 
         return this.driver.findElement(By.className(elem));
     }
-    public WebElement getElementByPath(String elem)
+    public WebElement getElementByPartialText(String elem)
     {
 
-        return this.driver.findElement(By.xpath(elem));
+        return this.driver.findElement(By.partialLinkText(elem));
     }
-
 }
