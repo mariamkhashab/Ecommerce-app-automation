@@ -1,6 +1,6 @@
+@Cart
 Feature: user could add different products to shopping cart
-  Scenario: user adds a product
-    When user navigates to "https://demo.nopcommerce.com/custom-t-shirt"
+  Scenario: user adds a product to cart
+    When user navigates to "https://demo.nopcommerce.com/first-prize-pies"
     And clicks on ADD TO CART
-    Then navigates to cart page
-    And finds his product added successfully
+    Then Success message appears

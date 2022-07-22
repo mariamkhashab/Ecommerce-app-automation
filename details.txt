@@ -1,5 +1,6 @@
 Notes:
-Any copy-paste was from same project for copying repetitive lines
+1-Any copy-paste was from same project for copying repetitive lines
+2-You must register a user first to run tests
 
 Assumptions:
 1-Reset feature:
@@ -10,3 +11,5 @@ Assumptions:
 
 3- log in check only in last scenario (check out)
 4- at checkout, cart is always not empty
+5- the add to cart, wishlist, compare list assertions require only "added to ... successfully"
+ 
