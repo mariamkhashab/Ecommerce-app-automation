@@ -1,3 +1,4 @@
+@Regression
 @ResetPass
   Feature: User forgets password and asks to reset it
 

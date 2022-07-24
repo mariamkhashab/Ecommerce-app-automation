@@ -1,3 +1,4 @@
+@Regression
 @Switch
   Feature: user switches between available currency from dropdown
     Scenario: user switches "US Dollar" from to "Euro"

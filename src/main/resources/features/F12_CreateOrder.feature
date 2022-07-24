@@ -1,3 +1,4 @@
+@Regression
 @CreateOrder
 Feature: Logged in user checksout from card and places an order
 

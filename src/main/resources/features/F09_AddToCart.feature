@@ -1,3 +1,4 @@
+@Regression
 @Cart
 Feature: user could add different products to shopping cart
   Scenario: user adds a product to cart

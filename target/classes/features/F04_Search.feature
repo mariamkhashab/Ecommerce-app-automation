@@ -1,3 +1,4 @@
+@Regression
 @Search
 Feature: user searches for a product
 

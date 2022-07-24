@@ -1,3 +1,4 @@
+@Regression
 @Login
 Feature: User logs into an existing account
 

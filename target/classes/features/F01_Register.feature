@@ -1,3 +1,4 @@
+@Regression
 @Registeration
 Feature: User registers new account
 

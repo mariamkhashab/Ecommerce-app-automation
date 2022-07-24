@@ -1,3 +1,4 @@
+@Regression
 @Wishlist
 Feature: user could add different products to wishlist
   Scenario: user adds a product to wishlist

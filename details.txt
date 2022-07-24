@@ -1,6 +1,8 @@
 Notes:
 1-Any copy-paste was from same project for copying repetitive lines
 2-You must register a user first to run tests
+3- most features are written in a way so user can replace test data easily
+4- all screenshots are in evidence folder
 
 Assumptions:
 1-Reset feature:

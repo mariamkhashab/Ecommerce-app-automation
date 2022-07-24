@@ -1,3 +1,4 @@
+@Regression
 @Category
 Feature: user could select different categories and sub categories
   Scenario: user chooses a category with a sub category

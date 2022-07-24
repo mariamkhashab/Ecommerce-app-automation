@@ -1,3 +1,4 @@
+@Regression
 @Tag
 Feature: user could select different tags
   Scenario: user chooses tag from a subcategory
